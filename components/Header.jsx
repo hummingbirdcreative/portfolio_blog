@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
+import { GiDiamonds } from 'react-icons/gi';
 import Link from 'next/link';
 import { getCategories } from '../services';
+
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -18,18 +19,19 @@ const Header = () => {
             <div className="md:float-left block">
                 <Link href="/">
                     <span className="cursor-pointer font-bold text-4xl text-white">
-                        Portfolio Blog
+                    <a style={{ display: 'flex', alignItems: 'center', color:"#EE5B25", fontFamily: 'Cormorant' }}>
+          <GiDiamonds size="3rem" /> <span style={{ fontWeight: 'bold', fontSize: '2rem' }}> &nbsp; Christine Graybosch</span>
+        </a>
                     </span>
                 </Link>
             </div>
             <div className="hidden md:float-left md:contents">
-                {categories.map((category) => (
-                    <Link key={category.slug} href={`/category/${category.slug}`}>
+                    <Link href="https://christinegraybosch.com/">
                         <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-                            {category.name}
+                            Portfolio
                         </span>
                     </Link>
-                ))}
+
 
             </div>
         </div>
